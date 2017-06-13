@@ -1,0 +1,23 @@
+$x = filter_var($_GET["x"],FILTER_SANITIZE_STRING);
+$("button[id^='xxx']").click(function(e) {
+  e.preventDefault();
+  var $btn = $(this);
+  $btn.button('loading');
+  var $idarr = $(this).attr("id").split("-");
+  var $jqxhr =
+    $.ajax({
+      type: "POST",
+      dataType: "json",
+      url: "/ajax/process.php",
+      data: { action: "XXX", pk: $id, table: 'XXX' }
+    })
+    .done (function(response) {
+      $btn.button('reset');
+      if (response.new) {
+        xxx
+        })
+      }
+    })
+    .fail (function(response) {
+      $btn.button('reset');				
+    });
